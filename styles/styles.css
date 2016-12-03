@@ -1,0 +1,53 @@
+div.plansza div div {
+    display: inline-block;
+    width: 50px;
+}
+
+div.plansza div {
+    height: 50px;
+}
+
+div.plansza div div.pionek:before {
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    content: " ";
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+}
+
+div.plansza div div.czerwonyPionek:before {
+    background: #f33;
+}
+
+div.plansza div div.czerwonyPionek:hover:before {
+    background: #f88;
+}
+
+div.plansza div div.bialyPionek:before {
+    background: #fff;
+}
+
+div.plansza div div.bialyPionek:hover:before {
+    background: #ccc;
+}
+
+div.plansza div:nth-child(2n + 1) div:nth-child(2n) {
+  background: black;
+}
+
+div.plansza div:nth-child(2n + 1) div:nth-child(2n + 1) {
+  background: white;
+}
+
+div.plansza div:nth-child(2n) div:nth-child(2n) {
+  background: white;
+}
+
+div.plansza div:nth-child(2n) div:nth-child(2n + 1) {
+  background: black;
+}
