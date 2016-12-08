@@ -40,6 +40,7 @@
 
         function onsuccess(data, index, channelName) {
             var json = {};
+
             console.log("Channel: ", channelName);
             console.log("onsuccess");
             try {
@@ -52,25 +53,29 @@
 
             switch (json.type) {
                 case "przesun":
-                    if (!initialized) {
-                        matrix = data.matrix;
-                        return elements = renderElements(createElements());
-                    }
+                    matrix = data.matrix;
 
-                    swapClasses(data.firstX, data.firstY, data.secondX, data.secondY);
+                    refreshPlansza();
                     break;
                 default:
-
                     console.warn("Wysylasz cos, czego nie obslugujemy");
             }
 
+        }
+
+        function refreshPlansza() {
+            while (plansza.firstChild) {
+                plansza.removeChild(plansza.firstChild);
+            }
+
+            elements = renderElements(createElements());
         }
 
         function onstatuschange(status) {
             if (status === PushStream.OPEN) {
                 console.log("Otwarto polaczenie Z WS");
                 console.log("matrix conn: ", matrix);
-                //elements = renderElements(createElements());
+                elements = renderElements(createElements());
             } else if (status === PushStream.CLOSED) {
                 console.log("Zamknieto polaczenie z WS");
             } else if (status === PushStream.CONNECTING) {
@@ -137,8 +142,6 @@
     }
 
     function createElements() {
-        initialized = true;
-        console.log("Matrix: ", matrix);
         return matrix.map(function(rzad, y) {
             var rzadElementow;
 
