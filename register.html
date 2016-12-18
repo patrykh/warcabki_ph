@@ -2,9 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css" >
+
 </head>
 <body>
-$END$
+<div id="box-register">
+    <form id="register-form" action="lib/register_user.php" method="post">
+        <input type="text" placeholder="Enter login" name="login" required><br>
+        <input type="text" placeholder="Enter email" name="mail" required><br>
+        <input type="text" placeholder="New password" name="password" required><br>
+        <input type="text" placeholder="Re password" name="repassword" required><br>
+        <input type="submit" name="submit">
+
+    </form>
+</div>
 </body>
 </html>

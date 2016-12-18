@@ -24,7 +24,9 @@
 
     function onload() {
         var content = document.querySelector("div.content");
-
+        if (!content) {
+            return;
+        }
         startWebSockets();
 
         attachListeners();
@@ -36,7 +38,7 @@
 
     function startWebSockets() {
         PushStreamService.initWebSocket();
-        PushStreamService.addChannel("testowy19a43.b1");
+        PushStreamService.addChannel("game_room_" + gameID + ".b5");
 
         function onsuccess(data, index, channelName) {
             var json = {};
@@ -75,7 +77,7 @@
             if (status === PushStream.OPEN) {
                 console.log("Otwarto polaczenie Z WS");
                 console.log("matrix conn: ", matrix);
-                elements = renderElements(createElements());
+                refreshPlansza();
             } else if (status === PushStream.CLOSED) {
                 console.log("Zamknieto polaczenie z WS");
             } else if (status === PushStream.CONNECTING) {
