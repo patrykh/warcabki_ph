@@ -32,7 +32,7 @@ $sql -> bindValue(":hashed_password", $hashed_password);
 $sql -> bindValue(":mail", $mail);
 $result = $sql -> execute();
 
-header('Location: ../index2.html');
+header('Location: ../index2.php');
 
 var_dump($result);
 #mb_send_mail()

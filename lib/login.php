@@ -38,7 +38,7 @@ try{
     }
     else {
         echo "Błędne hasło lub login!";
-        header('Location: ../index2.html?err=Bledny user/haslo');
+        header('Location: ../index2.php?err=Bledny user/haslo');
     }
 }catch(PDOException $e){
     echo $e->getMessage();

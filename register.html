@@ -1,21 +1,31 @@
+<?php
+$color = isset($_COOKIE["color"]) ? $_COOKIE["color"] : "black";
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="styles/style.css" >
 
+    <link rel="stylesheet" type="text/css" href="styles/main_style.css" />
+    <link rel="stylesheet" type="text/css" href="styles/style_<?=$color;?>.css" />
+    <link rel="stylesheet" type="text/css" href="styles/styles.css" />
+    <script src="js/scripts.js"></script>
+    <script src="js/Utils.js"></script>
 </head>
 <body>
 <div id="box-register">
     <form id="register-form" action="lib/register_user.php" method="post">
-        <input type="text" placeholder="Enter login" name="login" required><br>
-        <input type="text" placeholder="Enter email" name="mail" required><br>
-        <input type="text" placeholder="New password" name="password" required><br>
-        <input type="text" placeholder="Re password" name="repassword" required><br>
+        <input type="text" placeholder="Enter login" id="login" name="login" required><br>
+        <input type="email" placeholder="Enter email" name="mail" required><br>
+        <input type="password" placeholder="New password" id="password" name="password" required><br>
+        <input type="password" placeholder="Re password" id="repassword" name="repassword" required><br>
         <input type="submit" name="submit">
-
     </form>
+    <a href="index2.php"><button>Wróć</button></a>
+
 </div>
 </body>
 </html>

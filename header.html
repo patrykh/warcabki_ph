@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-    <input >
+<div class="header">
+    <div class="left">
 
-</body>
-</html>
+        <div class="colors">
+            <div class="color" data-color="black">Strona czarna</div>
+            <div class="color" data-color="white">Strona biała</div>
+        </div>
+    <p>Warcabki</p>
+    </div>
+    <div class="right">
+        <p>Zalogowany użytkownik: <?=$_SESSION['user']?></p>
+        <form action="lib/logout.php" method="post">
+            <input type="hidden" name="logout" value="1">
+            <input type="submit" value="wyloguj">
+        </form>
+
+    </div>
+</div>

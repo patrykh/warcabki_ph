@@ -13,5 +13,5 @@ if (isset($_POST['logout'])){
 
     session_unset();
     session_destroy();
-    header('Location: ../index2.html');
+    header('Location: ../index2.php');
 }
